@@ -16,29 +16,35 @@ export default function Home() {
 
   return (
     <div className='container'>
-      <div className='py-4'>
-      <table className="table table-striped table-hover table-bordered">
-<thead>
-  <tr>
-    <th scope="col">ID</th>
-    <th scope="col">Name</th>
-    <th scope="col">Username</th>
-    <th scope="col">Email</th>
-  </tr>
-</thead>
-<tbody>
-  {
-    users.map(user =>
-      <tr>
-        <th scope="row" key={user.id}>{user.id}</th>
-        <td>{user.name}</td>
-        <td>{user.username}</td>
-        <td>{user.email}</td>
-      </tr>
-    )
-  }
-</tbody>
-</table>
+      <div className='py-5'>
+      <table className="table table-bordered table-striped shadow p-3 mb-5 bg-white rounded">
+        <thead className="table-info">
+          <tr>
+            <th scope="col">No.</th>
+            <th scope="col">Name</th>
+            <th scope="col">Username</th>
+            <th scope="col">Email</th>
+            <th scope="col">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          {
+            users.map((user, index) =>
+              <tr>
+                <th scope="row" key={index}>{++index}</th>
+                <td>{user.name}</td>
+                <td>{user.username}</td>
+                <td>{user.email}</td>
+                <td>
+                  <button className="btn btn-outline-dark mx-2">View</button>
+                  <button className="btn btn-outline-secondary mx-2">Edit</button>
+                  <button className="btn btn-outline-danger mx-2">Delete</button>
+                </td>
+              </tr>
+              )
+            }
+            </tbody>
+        </table>
       </div>
     </div>
   )
