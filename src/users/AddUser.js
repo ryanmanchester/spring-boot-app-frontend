@@ -1,6 +1,7 @@
 import {useState} from 'react'
 import{useNavigate, Link} from 'react-router-dom'
 import axios from 'axios'
+import Form from '../layout/Form'
 
 export default function AddUser() {
 
@@ -10,12 +11,7 @@ export default function AddUser() {
     username: "",
     email: ""
   })
-
   const{name, username, email} = user
-
-  const onInputChange = e => {
-    setUser({...user, [e.target.name]:e.target.value})
-  }
 
   const onSubmit = async e => {
     e.preventDefault();
@@ -23,6 +19,9 @@ export default function AddUser() {
     navigate("/");
   }
 
+  const onInputChange = e => {
+    setUser({...user, [e.target.name]:e.target.value})
+  }
   return (
     <div className="container">
       <div className="row">
