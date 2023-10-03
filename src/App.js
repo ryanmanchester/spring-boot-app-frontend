@@ -3,6 +3,7 @@ import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
 import NavBar from './layout/NavBar'
 import Home from './pages/Home'
 import AddUser from './users/AddUser'
+import EditUser from './users/EditUser'
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
         <Routes>
           <Route exact path="/" element={<Home />} />
           <Route exact path="/add-user" element={<AddUser />} />
+          <Route exact path = "/edit-user/:id" element={<EditUser />} />
         </Routes>
       </Router>
     </div>
