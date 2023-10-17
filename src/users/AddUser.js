@@ -14,7 +14,7 @@ export default function AddUser() {
 
   const onSubmit = async e => {
     e.preventDefault();
-    await axios.post("http://localhost:8080/user", user);
+    await axios.post("http://localhost:8090/user", user);
     navigate("/");
   }
 
@@ -64,7 +64,7 @@ export default function AddUser() {
               onChange={e => onInputChange(e)} />
           </div>
           <button type="submit" className="btn btn-outline-primary">Submit</button>
-          <Link className="btn btn-outline-danger m-2" to="/">Cancel</Link>
+          <Link className="btn btn-outline-danger m-2" to="/employees">Cancel</Link>
           </form>
         </div>
       </div>

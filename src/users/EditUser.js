@@ -20,7 +20,7 @@ export default function EditUser() {
 
   const onSubmit = async e => {
     e.preventDefault();
-    await axios.put(`http://localhost:8080/user/${id}`, user);
+    await axios.put(`http://localhost:8090/user/${id}`, user);
     navigate("/");
   }
 
@@ -29,7 +29,7 @@ export default function EditUser() {
   }
 
   const loadUser = async () => {
-    const result = await axios.get(`http://localhost:8080/user/${id}`);
+    const result = await axios.get(`http://localhost:8090/user/${id}`);
       setUser(result.data);
   }
   return (
@@ -75,7 +75,7 @@ export default function EditUser() {
               onChange={e => onInputChange(e)} />
           </div>
           <button type="submit" className="btn btn-outline-primary">Submit</button>
-          <Link className="btn btn-outline-danger m-2" to="/">Cancel</Link>
+          <Link className="btn btn-outline-danger m-2" to="/employees">Cancel</Link>
           </form>
         </div>
       </div>
